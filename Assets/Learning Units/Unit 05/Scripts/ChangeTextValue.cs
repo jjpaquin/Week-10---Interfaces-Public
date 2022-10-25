@@ -9,16 +9,19 @@ public class ChangeTextValue : MonoBehaviour
     // the screen. You will need to add some stuff to this script to make it work...
 
     TextMeshProUGUI textMeshProUGUI;
+    float yposition;
+    [SerializeField] GameObject cube;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        textMeshProUGUI = GetComponent<TextMeshProUGUI>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        yposition = cube.transform.position.y;
+        textMeshProUGUI.text = yposition.ToString();
     }
 }
